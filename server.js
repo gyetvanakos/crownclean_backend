@@ -10,6 +10,13 @@ require("dotenv-flow").config();
 
 app.use(bodyParser.json());
 
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*")
+    res.header("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type, Accept")
+    res.header("Access-Control-Allow-Method", "GET, HEAD, OPTION, POST, PUT, DELETE");
+    next();
+   })
+
 mongoose.connect(
     process.env.DBHOST,
     {
