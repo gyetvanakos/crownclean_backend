@@ -4,10 +4,11 @@ const Schema = mongoose.Schema;
 
 let postSchema = new Schema(
     {
-        title: { type: String, required: true, minlength: 4, maxlength: 50 },
+        title: { type: String, required: true },
         content: { type: String, required: true},
+        picture_url: { type: String },
         date: { type: Date, default: Date.now },
-        pictures_url: [{ type: String }]
+        
     }  
 );
 
