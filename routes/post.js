@@ -7,7 +7,7 @@ const {
 
 
 
-router.post("/", (req, res) => {
+router.post("/", verifyToken, (req, res) => {
 
     data = req.body;
 
@@ -43,7 +43,7 @@ router.get("/:id", async (req, res) => {
 });
 
 
-router.put("/:id", (req, res) => {
+router.put("/:id", verifyToken, (req, res) => {
 
     const id = req.params.id;
 
@@ -67,7 +67,7 @@ router.put("/:id", (req, res) => {
 
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", verifyToken, (req, res) => {
 
     const id = req.params.id;
 

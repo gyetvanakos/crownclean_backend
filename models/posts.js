@@ -8,7 +8,6 @@ let postSchema = new Schema(
         content: { type: String, required: true},
         picture_url: { type: String },
         date: { type: Date, default: Date.now },
-        
     }  
 );
 
